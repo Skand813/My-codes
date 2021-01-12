@@ -1,6 +1,8 @@
 
 
 #to find matching profile from Canada and Australia
+#approach First
+
 import pandas as pd
 data2=pd.read_csv(r'/Users/smani/Documents/op_file.csv')
 print(len(df2))
@@ -30,6 +32,24 @@ op_df.to_csv("op_file1_3.csv")
 
 
 
+
+#approach second
+
+import re
+import pandas as pd
+
+data = pd.read_excel(r'/Users/smani/Documents/profiles_without_ca_au.xlsx')
+print(len(data))
+keys = list(data['primary_key'])
+locs = list(data['locations'])
+op_list =[]
+for i in new_list:                    #new_list is the combination of listx and listx1 and also listx in lower case
+    object_s = re.compile(i)
+    for j,k in enumerate(locs) :
+        if object_s.search(k) is False :
+            op_list.append(keys[j],loc)
+            op_df=pd.DataFrame(oplist, columns =['prim_key3', 'loc2'])
+op_df.to_csv("op_file1_4.csv")
 
 
 
